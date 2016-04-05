@@ -19,12 +19,6 @@ Navigate to project folder.
 From command line type , 
   java -jar target/Atomic-1.0-SNAPSHOT.war
 
-We need to have the database started for the application to run.
-
-
-
-
-
 
 From STS IDE,
 
