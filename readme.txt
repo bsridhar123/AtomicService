@@ -17,18 +17,11 @@ Command line Execution
 Navigate to project folder.
 
 From command line type , 
-  java -jar target/ResourceProject-1.0-SNAPSHOT.jar
+  java -jar target/Atomic-1.0-SNAPSHOT.war
 
 We need to have the database started for the application to run.
 
 
-Dependencies
-============
-We need to have the mongo db server to be running.
-
-Since Mongo DB is a schema less data store we do not need to have a db script for creating the tables.
-
-On Startup , the required data is populated in the collections.
 
 
 
@@ -42,10 +35,13 @@ Spring Boot will automatically start a embedded tomcat server to run the app.
 
 To Access the app, use any REST Client .
 
-
 The application would be dynamically registered with Service Registry at Startup.
 
 More than one instance of the application can be started and each instance would register with Service Registry.
+
+
+Dependencies
+============
 
 The details of Eureka Service Registry are in below path,
 		 src/main/resources/application.properties
