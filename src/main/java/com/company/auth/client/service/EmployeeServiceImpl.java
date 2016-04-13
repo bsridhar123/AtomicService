@@ -11,14 +11,13 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeServiceImpl.class);
 	
-	    
-	
 	 
 	public Employee getEmployee(String id) throws Exception{
 		LOGGER.info("Entering");
     	LOGGER.info("Received Id  is :" + id);
     	return new Employee("1","Sridhar");
 	}
+	
 	
 	
 	 public String createEmployee(Employee employee) throws Exception {
