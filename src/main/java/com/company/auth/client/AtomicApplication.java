@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Configuration
 @ComponentScan
 @EnableAutoConfiguration
-@EnableEurekaClient
+/*@EnableEurekaClient*/
 @RestController
 @SpringBootApplication
 public class AtomicApplication extends SpringBootServletInitializer {
