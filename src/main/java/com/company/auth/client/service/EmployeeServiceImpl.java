@@ -18,7 +18,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeServiceImpl.class);
 	
-	private static Map<String, Employee> employeeMap=new HashMap<String, Quote>();
+	private static Map<String, Employee> employeeMap=new HashMap<String, Employee>();
 	
 	static {
 		employeeMap.put("test", new Employee("test","testEmployee"));
@@ -50,7 +50,7 @@ LOGGER.info("Entering");
     	
     	if(null!=eEmployee && eEmployee.getEmpno().equalsIgnoreCase(employee.getEmpno())){
     		throw new DuplicateResourceException(
-					"Passed Quote No:" + employee.getEmpno() + " Already Exists");
+					"Passed Employee No:" + employee.getEmpno() + " Already Exists");
     	}
     	
     	employeeMap.put(employee.getEmpno(),employee);
