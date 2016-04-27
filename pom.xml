@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.company</groupId>
-    <artifactId>Atomic</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>atomic</artifactId>
+    <version>1.0-snapshot</version>
     <packaging>war</packaging>
     <name>Atomic</name>
     <url>http://maven.apache.org</url>
@@ -61,7 +61,9 @@
         </dependency>-->
         
 		</dependencies>
-    
+    <properties>
+    <docker.image.prefix>mypersonal</docker.image.prefix>
+    </properties>
  <build>
 		<plugins>
 			<plugin>
@@ -75,6 +77,22 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+	<groupId>com.spotify</groupId>
+	<artifactId>docker-maven-plugin</artifactId>
+	<version>0.2.3</version>
+	<configuration>
+		<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+		<dockerDirectory>src/main/docker</dockerDirectory>
+		<resources>
+			<resource>
+				<targetPath>/</targetPath>
+				<directory>${project.build.directory}</directory>
+				<include>${project.build.finalName}.war</include>
+			</resource>
+		</resources>
+	</configuration>
+</plugin>
 		</plugins>
 	</build>
 	<repositories>
