@@ -37,7 +37,6 @@ public class EmployeeServiceImpl implements EmployeeService{
     		throw new ResourceNotFoundException(
 					"Invalid Employee no: " + id + " passed as input ");
     	}
-    	return employee;
 	}
 	
 	
